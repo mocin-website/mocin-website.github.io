@@ -1,0 +1,476 @@
+/* IMPORTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* VARIABLES */
+
+:root {
+    --COLOR_card--mocin-design-mocin-concepts__h2: rgba(255, 255, 255, 0.7);
+    --TRANSITION_card--mocin-design-mocin-concepts: all 0.25s ease-in 0.25s;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes jumpUpAndDown {
+    0% {
+        transform: translateY(0px);
+    }
+
+    40% {
+        transform: translateY(-1vw);
+    }
+
+    60% {
+        transform: translateY(-1vw);
+    }
+
+    80% {
+        transform: translateY(0px);
+    }
+}
+
+/* STYLES */
+
+* {
+    font-family: Montserrat, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: rgba(38, 38, 38, 1);
+    scroll-snap-align: end;
+}
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 3.5rem;
+    background: rgba(240, 240, 240, 0.25);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0.25vw 1vw rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+
+    animation: fadeIn 1.5s forwards 2.4s;
+}
+
+.nav-bar__content {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-bar__content--left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar__icon {
+    align-items: center;
+    margin-top: 1.75%;
+    padding: 0;
+    display: inline;
+}
+
+.nav-bar__icon svg {
+    display: inline;
+    width: 2.25rem;
+    border-radius: 50%;
+}
+
+.nav-bar__icon-text {
+    display: inline;
+}
+
+.nav-bar__icon-text h1 {
+    color: rgba(35, 35, 35, 0.8);
+    display: inline;
+    padding: 0;
+}
+
+.nav-bar__icon-text__home-page-link:active {
+    color: rgba(35, 35, 35, 0.8);
+}
+
+.nav-bar__icon__home-page-link {
+    margin-top: 1.75%;
+    text-decoration: none;
+    padding: 0;
+    color: rgba(35, 35, 35, 0.8);
+    font-size: 0.8rem;
+}
+
+.nav-bar__icon-text__home-page-link {
+    margin-left: 0.8rem;
+    text-decoration: none;
+    padding: 0;
+    color: rgba(35, 35, 35, 0.8);
+    font-size: 0.8rem;
+}
+
+.nav-bar__social-media-icons {
+    align-items: center;
+    margin-top: 1.75%;
+    margin-left: 3rem;
+}
+
+.nav-bar__social-media-icons ul li a svg {
+    width: 1.5rem;
+    margin: 0 0.15rem;
+}
+
+.nav-bar__social-media-icons ul li a {
+    text-decoration: none;
+}
+
+.nav-bar__social-media-icons ul li {
+    list-style: none;
+    display: inline;
+}
+
+.nav-bar__social-media-icons ul {
+    padding: 0;
+}
+
+.nav-bar__page-selector {
+    display: flex;
+}
+
+.nav-bar__page-selector ul li  {
+    list-style: none;
+    display: inline;
+    margin: 1rem;
+}
+
+.nav-bar__page-selector ul li a {
+    text-decoration: none;
+    text-align: center;
+    color: rgba(220, 220, 220, 1);
+}
+
+.nav-bar__page-selector .current-page {
+    width: 3rem;
+    height: 1rem;
+    background: rgba(200, 200, 200, 0.55);
+    padding: 0.45rem;
+    border-radius: 0.4rem;
+    margin: 0 -0.45rem;
+    color: rgba(45, 45, 45, 1);
+    font-weight: 600;
+}
+
+.hero__background img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 94rem;
+    z-index: -1000;
+    opacity: 0;
+
+    animation: fadeIn 2.4s forwards;
+}
+
+.hero__text {
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-top: 9.5rem;
+    margin-left: 66%;
+    width: 30%;
+}
+
+.main-heading {
+    color: rgba(160, 192, 239, 1);
+    font-weight: 600;
+    font-size: 5rem;
+    margin-top: 12.75%;
+    margin-bottom: 0px;
+    text-shadow: 0px 2px 5px #acacac;
+    
+    animation: slideInFromTop 2s forwards 0s 1;
+}
+
+.hero__text__p-div {
+    opacity: 0;
+    animation: slideInFromTop 2s forwards 0.4s 1;
+}
+
+.p--big {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: rgba(150, 150, 150, 1);
+    text-align: center; 
+    position: relative;
+    margin-top: 1.5rem;
+    padding: 0px;
+    display: inline;
+}
+
+.hero__social-media-links {
+    opacity: 0;
+    position: relative;
+
+    animation: fadeIn 1.5s forwards 2.4s;
+}
+
+.hero__social-media-links ul {
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+
+.hero__social-media-links ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 1%;
+}
+
+.hero__social-media-links ul li a {
+    text-decoration: none;
+}
+
+.fiverr_link__icon,
+.youtube_link__icon,
+.instagram_link__icon {
+    width: 4rem;
+}
+
+.second-heading {
+    position: relative;
+    top: 32rem;
+    display: flex;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 0;
+    color:rgba(134, 165, 211, 1);
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    top: 45rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    z-index: 999;
+}
+
+.scroll-down-arrow svg {
+    display: inline;
+    opacity: 0.75;
+    width: 1.5rem;
+    margin: 0 auto;
+    padding: 0;
+
+    animation: jumpUpAndDown 2.5s ease forwards 0s infinite;
+}
+
+.cards {
+    width: 99%;
+    margin-top: 35rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card--mocin-design {
+    position: relative;
+    background: rgba(151, 57, 191, 0.4);
+    border-radius: 1vw;
+    width: 32.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1.5vw;
+    margin: 0;
+    overflow: hidden;
+    text-decoration: none;
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.card--mocin-design:hover {
+    transform: scale(105%);
+    background: rgba(151, 57, 191, 0.75)
+}
+.card--mocin-design:hover .card--mocin-design__p {
+    top: 0rem;
+    color:rgba(217, 130, 255, 1);
+}
+.card--mocin-design:hover .card--mocin-design__h2, 
+.card--mocin-design:hover .card--mocin-design__img {
+    transform: scale(1);
+    top: 0;
+}
+
+.card--mocin-design__p {
+    position: relative;
+    top: 5rem;
+    font-size: 1.05rem;
+    width: 85%;
+    justify-content: center;
+    margin: auto;
+    color:rgba(217, 130, 255, 0);
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.card--mocin-design__h2 {
+    position: relative;
+    top: 4rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: var(--COLOR_card--mocin-design-mocin-concepts__h2);
+    transform: scale(1.25);
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.card--mocin-design__img {
+    position: relative;
+    top: 2rem;
+    border-radius: 50%;
+    width: 6rem;
+    margin-bottom: 0.1rem;
+    transform: scale(1.25);
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.card--mocin-concepts {
+    position: relative;
+    background: rgba(57, 191, 173, 0.4);
+    border-radius: 1vw;
+    width: 32.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1.5vw;
+    margin: 0;
+    overflow: hidden;
+    text-decoration: none;
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.card--mocin-concepts:hover {
+    transform: scale(105%);
+    background: rgba(57, 191, 173, 0.75)
+}
+.card--mocin-concepts:hover .card--mocin-concepts__p {
+    top: 0rem;
+    color:rgba(130, 255, 213, 1);
+}
+.card--mocin-concepts:hover .card--mocin-concepts__h2, 
+.card--mocin-concepts:hover .card--mocin-concepts__img {
+    transform: scale(1);
+    top: 0;
+}
+
+.card--mocin-concepts__p {
+    position: relative;
+    top: 5rem;
+    font-size: 1.05rem;
+    width: 85%;
+    justify-content: center;
+    margin: auto;
+    color:rgba(130, 255, 213, 0);
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.card--mocin-concepts__h2 {
+    position: relative;
+    top: 4rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: var(--COLOR_card--mocin-design-mocin-concepts__h2);
+    transform: scale(1.25);
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.card--mocin-concepts__img {
+    position: relative;
+    top: 2rem;
+    border-radius: 50%;
+    width: 6rem;
+    margin-bottom: 0.1rem;
+    transform: scale(1.25);
+
+    transition: var(--TRANSITION_card--mocin-design-mocin-concepts);
+}
+
+.footer {
+    width: 100%;
+    height: 3.5rem;
+    background: rgba(240, 240, 240, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.5s;
+}
+
+.footer:hover {
+    height: 5rem;
+    margin-top: 8.5rem;
+}
+
+.footer__content {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__content .footer__content__font_weight_500,
+.footer__content .footer__content__font_weight_400 {
+    color:rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 400;
+
+    transition: 0.5s;
+}
+
+.footer:hover .footer__content__font_weight_500 {
+    color:rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    font-weight: 500;
+
+}
+
+.footer:hover .footer__content__font_weight_400 {
+    font-weight: 400;
+}
